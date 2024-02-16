@@ -7,11 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
 
-        // gestionnaire d'evenm pour le boutton supprimer des taches
-        let supTache = document.getElementsByClassName('bsupp');
-        for (let i = 0; i < supTache.length; i++) {
-            supTache[i].addEventListener('click', supprimerTache());
-        }
+        // // gestionnaire d'evenm pour le boutton supprimer des taches
+        // let supTache = document.getElementsByClassName('bsupp');
+        // for (let i = 0; i < supTache.length; i++) {
+        //     supTache[i].addEventListener('click', supprimerTache());
+        // }
 
         // gestionnaire d'evenm pour le "x" de la modal
         let closeButton = document.querySelector('.modalclose');
@@ -33,35 +33,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // Fonction pour supprimer une tache
-    function supprimerTache (event) {
-        let target = event.target;
+    // function supprimerTache (event) {
+    //     let target = event.target;
 
-        // Vérifier si le clic a été effectué sur un bouton
-        if (target.nodeName === "BUTTON") {
-            // Récupérer le parent du bouton (tempGridItem)
-            let parent = target.parentNode;
+    //     // Vérifier si le clic a été effectué sur un bouton
+    //     if (target.nodeName === "BUTTON") {
+    //         // Récupérer le parent du bouton (tempGridItem)
+    //         let parent = target.parentNode;
 
-            // Récupérer la tâche à supprimer (vous devez ajuster cette ligne selon la structure réelle de vos cellules)
-            let tacheASupprimer = parent.querySelector('td:nth-child(1)').textContent.split("Tache: ")[1];
+    //         // Récupérer la tâche à supprimer (vous devez ajuster cette ligne selon la structure réelle de vos cellules)
+    //         let tacheASupprimer = parent.querySelector('td:nth-child(1)').textContent.split("Tache: ")[1];
 
-            // Requête AJAX pour supprimer la tâche de la base de données
-            $.ajax({
-                type: "POST",
-                url: "includes/supprimerTache.php", // Ajoutez le chemin correct vers votre fichier PHP de suppression
-                data: {
-                    tache: tacheASupprimer
-                },
-                success: function(response) {
-                    // Mettre à jour la partie de votre page où les tâches sont affichées
-                    // Vous devez ajuster cela en fonction de la structure de votre page
-                    document.getElementById('listeTaches').innerHTML = response;
-                },
-                error: function() {
-                    console.log("Erreur lors de la requête AJAX");
-                }
-            });
-        }
-    }
+    //         // Requête AJAX pour supprimer la tâche de la base de données
+    //         $.ajax({
+    //             type: "POST",
+    //             url: "includes/supprimerTache.php", // Ajoutez le chemin correct vers votre fichier PHP de suppression
+    //             data: {
+    //                 tache: tacheASupprimer
+    //             },
+    //             success: function(response) {
+    //                 // Mettre à jour la partie de votre page où les tâches sont affichées
+    //                 // Vous devez ajuster cela en fonction de la structure de votre page
+    //                 document.getElementById('listeTaches').innerHTML = response;
+    //             },
+    //             error: function() {
+    //                 console.log("Erreur lors de la requête AJAX");
+    //             }
+    //         });
+    //     }
+    // }
 
 
     // Fonction pour ouvrir la modal
