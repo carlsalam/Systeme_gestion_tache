@@ -1,7 +1,6 @@
 <?php 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    // Récupérer les données envoyées par la requête AJAX
     // $taskId = $_POST["id"];
     $tache = strtolower($_POST["tache"]);
     $categorie = $_POST["categorie"];
@@ -56,6 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
                 </table>
                         <button class="bmodifier">Modifier</button>
+                        <button class="bsupp">Supprimer</button>
                 </div>';
             }
 

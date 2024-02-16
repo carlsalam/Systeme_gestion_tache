@@ -81,6 +81,7 @@
 
                     </table>
                             <button class="bmodifier">Modifier</button>
+                            <button class="bsupp">Supprimer</button>
                     </div>';
                 }?>
 
